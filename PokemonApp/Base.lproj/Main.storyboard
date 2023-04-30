@@ -20,8 +20,8 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="eK0-kc-8Lt">
                                 <rect key="frame" x="0.0" y="59" width="393" height="759"/>
                                 <subviews>
-                                    <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="o00-tp-tpJ">
-                                        <rect key="frame" x="9" y="0.0" width="375" height="60"/>
+                                    <searchBar contentMode="redraw" placeholder="Search the Pokemons!" translatesAutoresizingMaskIntoConstraints="NO" id="o00-tp-tpJ">
+                                        <rect key="frame" x="15" y="0.0" width="363" height="60"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="60" id="Uq1-gk-hOw"/>
                                         </constraints>
@@ -39,6 +39,8 @@
                                     <constraint firstAttribute="bottom" secondItem="Avj-8l-Ioi" secondAttribute="bottom" id="DqJ-4a-LQE"/>
                                     <constraint firstItem="Avj-8l-Ioi" firstAttribute="leading" secondItem="eK0-kc-8Lt" secondAttribute="leading" id="MFI-Zv-y8d"/>
                                     <constraint firstAttribute="trailing" secondItem="Avj-8l-Ioi" secondAttribute="trailing" id="ci5-iS-VfT"/>
+                                    <constraint firstAttribute="trailing" secondItem="o00-tp-tpJ" secondAttribute="trailing" constant="15" id="dA3-Ji-XsO"/>
+                                    <constraint firstItem="o00-tp-tpJ" firstAttribute="leading" secondItem="eK0-kc-8Lt" secondAttribute="leading" constant="15" id="rXm-92-PsV"/>
                                 </constraints>
                             </stackView>
                         </subviews>
