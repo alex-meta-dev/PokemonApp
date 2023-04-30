@@ -25,18 +25,72 @@ class ViewController: UIViewController, UITableViewDelegate {
     // ViewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        fetchDataFromApiAndDecode {
+            print("Success")
+        }
+        
+        searchBar.delegate = self
+        pokemonTableView.dataSource = self
+        pokemonTableView.delegate = self
     }
+    // ViewDidLoad ends here
+    
+    /*
+     
+     
+    */
     
     // Fetching data from the API functions
     
-    func fetchDataFromApiAndDecode() {
+    func fetchDataFromApiAndDecode(completed: @escaping () -> ()) {
         
+        let url = URL(string: Constants.pokeApiURL)
+        
+        URLSession.shared.dataTask(with: url!) { data, response, error in
+            if error == nil {
+                do {
+                    let decodedData = try JSONDecoder().decode(PokemonDataResponse.self, from: data!)
+                    let counter = decodedData.results.count
+                    
+                    for number in 0...counter-1 {
+                        self.listOfPokemons.append(Pokemon(name: decodedData.results[number].name, url: decodedData.results[number].url))
+                        
+                        // used for search list
+                        self.nameOfPokemonsList.append(decodedData.results[number].name)
+                    }
+                    DispatchQueue.main.async {
+                        completed()
+                    }
+                }
+                catch {
+                    print(error)
+                }
+            }
+        }.resume()
     }
     
-    func fetchDataFromIndividualPokemonLink() {
+    func fetchDataFromIndividualPokemonLink(url: String, pokemonDetailed: PokemonModel) {
         
+        let detailedURL = URL(string: url)
+        
+        URLSession.shared.dataTask(with: detailedURL!) { data, response, error in
+            
+            if error == nil {
+                do {
+                    let decodedData = try JSONDecoder().decode(PokemonDetails.self, from: data!)
+                    self.pokemonDetailed = PokemonModel(base_experience: decodedData.base_experience, id: decodedData.id, height: decodedData.height, weight: decodedData.weight, order: decodedData.order)
+                }
+                catch {
+                    print(error)
+                }
+            }
+        }
+        .resume()
     }
 }
+
+
 
 
 extension ViewController: UITableViewDataSource {
