@@ -17,6 +17,7 @@
 		FA0E619729FEBFF900EADCBA /* PokemonTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA0E619529FEBFF900EADCBA /* PokemonTableViewCell.xib */; };
 		FA0E619929FEC10600EADCBA /* PokemonData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0E619829FEC10600EADCBA /* PokemonData.swift */; };
 		FA0E619B29FEC10D00EADCBA /* PokemonModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0E619A29FEC10D00EADCBA /* PokemonModel.swift */; };
+		FA0E619D29FEC48700EADCBA /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0E619C29FEC48700EADCBA /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		FA0E619529FEBFF900EADCBA /* PokemonTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PokemonTableViewCell.xib; sourceTree = "<group>"; };
 		FA0E619829FEC10600EADCBA /* PokemonData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonData.swift; sourceTree = "<group>"; };
 		FA0E619A29FEC10D00EADCBA /* PokemonModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonModel.swift; sourceTree = "<group>"; };
+		FA0E619C29FEC48700EADCBA /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +69,7 @@
 				FA0E618029FEA84400EADCBA /* AppDelegate.swift */,
 				FA0E618229FEA84400EADCBA /* SceneDelegate.swift */,
 				FA0E618429FEA84400EADCBA /* ViewController.swift */,
+				FA0E619C29FEC48700EADCBA /* Constants.swift */,
 				FA0E618629FEA84400EADCBA /* Main.storyboard */,
 				FA0E619429FEBFF900EADCBA /* PokemonTableViewCell.swift */,
 				FA0E619829FEC10600EADCBA /* PokemonData.swift */,
@@ -155,6 +158,7 @@
 				FA0E619B29FEC10D00EADCBA /* PokemonModel.swift in Sources */,
 				FA0E619629FEBFF900EADCBA /* PokemonTableViewCell.swift in Sources */,
 				FA0E618129FEA84400EADCBA /* AppDelegate.swift in Sources */,
+				FA0E619D29FEC48700EADCBA /* Constants.swift in Sources */,
 				FA0E618329FEA84400EADCBA /* SceneDelegate.swift in Sources */,
 				FA0E619929FEC10600EADCBA /* PokemonData.swift in Sources */,
 			);

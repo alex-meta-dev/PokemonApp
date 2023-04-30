@@ -33,6 +33,11 @@
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Avj-8l-Ioi">
                                         <rect key="frame" x="0.0" y="65" width="393" height="694"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <connections>
+                                            <outlet property="dataSource" destination="BYZ-38-t0r" id="Ni7-1A-WXI"/>
+                                            <outlet property="delegate" destination="BYZ-38-t0r" id="xKa-3i-ukH"/>
+                                            <outlet property="prefetchDataSource" destination="BYZ-38-t0r" id="Txf-mv-ZWa"/>
+                                        </connections>
                                     </tableView>
                                 </subviews>
                                 <constraints>
@@ -53,6 +58,10 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="eK0-kc-8Lt" secondAttribute="trailing" id="kjU-py-5Fi"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="pokemonTableView" destination="Avj-8l-Ioi" id="aiT-F3-tYs"/>
+                        <outlet property="searchBar" destination="o00-tp-tpJ" id="vTX-6J-Xuz"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
