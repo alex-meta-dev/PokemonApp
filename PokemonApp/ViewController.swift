@@ -27,6 +27,7 @@ class ViewController: UIViewController, UITableViewDelegate {
         super.viewDidLoad()
         
         fetchDataFromApiAndDecode {
+            self.pokemonTableView.reloadData()
             print("Success")
         }
         
@@ -95,17 +96,34 @@ class ViewController: UIViewController, UITableViewDelegate {
 
 extension ViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        <#code#>
+        
+        if isSearching {
+            return searchList.count
+        } else {
+            return listOfPokemons.count
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        <#code#>
+        
+        let pokemons = listOfPokemons[indexPath.row]
+        let cell = UITableViewCell(style: .subtitle, reuseIdentifier: nil)
+        
+        if isSearching {
+            cell.textLabel?.text = searchList[indexPath.row]
+        } else {
+            cell.textLabel?.text = pokemons.name.capitalized
+        }
+        return cell
     }
 }
 
 extension ViewController: UISearchBarDelegate {
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        <#code#>
+        
+        isSearching = true
+        searchList = nameOfPokemonsList.filter({$0.lowercased().prefix(searchText.count) == searchText.lowercased()})
+        pokemonTableView.reloadData()
     }
 }
