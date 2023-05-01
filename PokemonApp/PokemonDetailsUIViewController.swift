@@ -1,9 +1,7 @@
-//
 //  PokemonDetailsUIViewController.swift
 //  PokemonApp
-//
 //  Created by Alexandru Meta on 01.05.2023.
-//
+
 
 import UIKit
 

@@ -2,11 +2,13 @@
 //  PokemonApp
 //  Created by Alexandru Meta on 30.04.2023.
 
+// Last refactored 1-May-2023 @10:24am
+
 import UIKit
 
 class ViewController: UIViewController, UITableViewDelegate {
     
-    // Important stuff
+// MARK: - List of pokemons structs, searchList, detailed pokemon
     var nameOfPokemonsList = [String]()
     
     var searchList = [String]()
@@ -17,12 +19,12 @@ class ViewController: UIViewController, UITableViewDelegate {
     var listOfPokemons = [Pokemon]()
     
     
-    // Outlets
+// MARK: - IBOutlets
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var pokemonTableView: UITableView!
     
     
-    // ViewDidLoad
+// MARK: - viewDidLoad()
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -35,15 +37,12 @@ class ViewController: UIViewController, UITableViewDelegate {
         pokemonTableView.dataSource = self
         pokemonTableView.delegate = self
     }
-    // ViewDidLoad ends here
+// MARK: - viewDidLoad() ends here
     
-    /*
-     
-     
-    */
+// MARK: - Fetch & decode data from PokeAPI functions
     
-    // Fetching data from the API functions
-    
+    // Download data from the "results" endpoint, a list of [Pokemons], each Pokemon has a name and URL, each individual URL has details about
+    // each Pokemon, such as stats...
     func fetchDataFromApiAndDecode(completed: @escaping () -> ()) {
         
         let url = URL(string: Constants.pokeApiURL)
@@ -54,10 +53,11 @@ class ViewController: UIViewController, UITableViewDelegate {
                     let decodedData = try JSONDecoder().decode(PokemonDataResponse.self, from: data!)
                     let counter = decodedData.results.count
                     
+                    // Adding the Pokemons to the list
                     for number in 0...counter-1 {
                         self.listOfPokemons.append(Pokemon(name: decodedData.results[number].name, url: decodedData.results[number].url))
                         
-                        // used for search list
+                        // Used for search list
                         self.nameOfPokemonsList.append(decodedData.results[number].name)
                     }
                     DispatchQueue.main.async {
@@ -68,9 +68,10 @@ class ViewController: UIViewController, UITableViewDelegate {
                     print(error)
                 }
             }
-        }.resume()
+        }.resume() // Starting the task
     }
     
+    // Downloading data for each individual Pokemon
     func fetchDataFromIndividualPokemonLink(url: String, pokemonDetailed: PokemonModel) {
         
         let detailedURL = URL(string: url)
@@ -87,14 +88,15 @@ class ViewController: UIViewController, UITableViewDelegate {
                 }
             }
         }
-        .resume()
+        .resume() // Starting the task
     }
 }
 
-
-
+// MARK: - TableView Extensions
 
 extension ViewController: UITableViewDataSource {
+    
+    // Displaying number of rows in the TableView
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         if isSearching {
@@ -104,6 +106,7 @@ extension ViewController: UITableViewDataSource {
         }
     }
     
+    // Cells
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let pokemons = listOfPokemons[indexPath.row]
@@ -117,19 +120,26 @@ extension ViewController: UITableViewDataSource {
         return cell
     }
     
+    // Function for when it's tapped
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
         fetchDataFromIndividualPokemonLink(url: listOfPokemons[indexPath.row].url, pokemonDetailed: pokemonDetailed)
         performSegue(withIdentifier: Constants.segueToDetails, sender: self)
     }
     
+    // Data that needs to be sent to the destination VC
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
         if segue.identifier == Constants.segueToDetails {
             let pokemonDetailedViewController = segue.destination as! PokemonDetailsUIViewController
+            
+            // Each pokemon has a different ID, each image has the same URL but with a different ID at the end
             pokemonDetailedViewController.pokemonImageURL = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/\(pokemonDetailed.id).png"
         }
     }
 }
 
+// MARK: - SearchBar Extension
 extension ViewController: UISearchBarDelegate {
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
@@ -139,4 +149,6 @@ extension ViewController: UISearchBarDelegate {
         pokemonTableView.reloadData()
     }
 }
+
+// MARK: - File ends here.
 

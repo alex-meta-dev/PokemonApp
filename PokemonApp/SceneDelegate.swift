@@ -2,6 +2,8 @@
 //  PokemonApp
 //  Created by Alexandru Meta on 30.04.2023.
 
+// Last refactored 1-May-2023 @10:10am
+
 import UIKit
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
@@ -43,7 +45,5 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Use this method to save data, release shared resources, and store enough scene-specific state information
         // to restore the scene back to its current state.
     }
-
-
 }
 
