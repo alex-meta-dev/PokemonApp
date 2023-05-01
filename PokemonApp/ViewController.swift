@@ -116,6 +116,11 @@ extension ViewController: UITableViewDataSource {
         }
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        fetchDataFromIndividualPokemonLink(url: listOfPokemons[indexPath.row].url, pokemonDetailed: pokemonDetailed)
+        performSegue(withIdentifier: Constants.segueToDetails, sender: self)
+    }
 }
 
 extension ViewController: UISearchBarDelegate {

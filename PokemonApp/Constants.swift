@@ -10,4 +10,5 @@ import Foundation
 struct Constants {
     
     static let pokeApiURL = "https://pokeapi.co/api/v2/pokemon/"
+    static let segueToDetails = "SegueToDetails"
 }

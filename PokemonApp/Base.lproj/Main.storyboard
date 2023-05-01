@@ -61,6 +61,7 @@
                     <connections>
                         <outlet property="pokemonTableView" destination="Avj-8l-Ioi" id="aiT-F3-tYs"/>
                         <outlet property="searchBar" destination="o00-tp-tpJ" id="vTX-6J-Xuz"/>
+                        <segue destination="dDr-aV-Vs4" kind="presentation" identifier="SegueToDetails" id="tgf-JA-twh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -72,17 +73,17 @@
             <objects>
                 <viewController id="dDr-aV-Vs4" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Krk-UD-Tex">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="o2o-bK-cpS">
-                                <rect key="frame" x="0.0" y="59" width="393" height="759"/>
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OWq-N1-Pej">
-                                        <rect key="frame" x="0.0" y="0.0" width="393" height="377"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="418.66666666666669"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="UKd-aX-1EL">
-                                                <rect key="frame" x="71.666666666666686" y="63.666666666666686" width="250" height="250"/>
+                                                <rect key="frame" x="71.666666666666686" y="84.333333333333314" width="250" height="250"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="250" id="BCn-OW-aBi"/>
                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="250" id="D3p-a5-nAo"/>
@@ -98,7 +99,7 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qng-sv-zoh">
-                                        <rect key="frame" x="0.0" y="382" width="393" height="377"/>
+                                        <rect key="frame" x="0.0" y="423.66666666666674" width="393" height="418.33333333333326"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     </view>
                                 </subviews>
