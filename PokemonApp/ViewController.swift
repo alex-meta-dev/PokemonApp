@@ -121,6 +121,13 @@ extension ViewController: UITableViewDataSource {
         fetchDataFromIndividualPokemonLink(url: listOfPokemons[indexPath.row].url, pokemonDetailed: pokemonDetailed)
         performSegue(withIdentifier: Constants.segueToDetails, sender: self)
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == Constants.segueToDetails {
+            let pokemonDetailedViewController = segue.destination as! PokemonDetailsUIViewController
+            pokemonDetailedViewController.pokemonImageURL = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/\(pokemonDetailed.id).png"
+        }
+    }
 }
 
 extension ViewController: UISearchBarDelegate {
@@ -132,3 +139,4 @@ extension ViewController: UISearchBarDelegate {
         pokemonTableView.reloadData()
     }
 }
+

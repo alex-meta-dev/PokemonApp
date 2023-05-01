@@ -68,10 +68,10 @@
             </objects>
             <point key="canvasLocation" x="132" y="-27"/>
         </scene>
-        <!--View Controller-->
+        <!--Pokemon DetailsUI View Controller-->
         <scene sceneID="V2l-CW-U3y">
             <objects>
-                <viewController id="dDr-aV-Vs4" sceneMemberID="viewController">
+                <viewController id="dDr-aV-Vs4" customClass="PokemonDetailsUIViewController" customModule="PokemonApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Krk-UD-Tex">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -114,6 +114,9 @@
                             <constraint firstItem="VTs-Eb-R9Q" firstAttribute="bottom" secondItem="o2o-bK-cpS" secondAttribute="bottom" id="xUT-X7-bi3"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="pokemonImage" destination="UKd-aX-1EL" id="2TT-OW-d7K"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vba-SO-Ntq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
