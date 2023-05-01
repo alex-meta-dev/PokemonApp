@@ -33,11 +33,18 @@ class ViewController: UIViewController, UITableViewDelegate {
             print("Success")
         }
         
+        executeOnStart()
+    }
+// MARK: - viewDidLoad() ends here
+    
+// MARK: - Helper func to be executed on main
+    
+    func executeOnStart() {
+        
         searchBar.delegate = self
         pokemonTableView.dataSource = self
         pokemonTableView.delegate = self
     }
-// MARK: - viewDidLoad() ends here
     
 // MARK: - Fetch & decode data from PokeAPI functions
     
