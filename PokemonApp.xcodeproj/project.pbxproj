@@ -66,17 +66,41 @@
 			children = (
 				FA0E618029FEA84400EADCBA /* AppDelegate.swift */,
 				FA0E618229FEA84400EADCBA /* SceneDelegate.swift */,
-				FA0E618429FEA84400EADCBA /* ViewController.swift */,
-				FA0E619C29FEC48700EADCBA /* Constants.swift */,
+				FA0E61A029FFAC7C00EADCBA /* Views */,
+				FA0E61A129FFAC8F00EADCBA /* Model */,
+				FA0E61A229FFACAA00EADCBA /* Helpers */,
 				FA0E618629FEA84400EADCBA /* Main.storyboard */,
-				FA0E619E29FF95EA00EADCBA /* PokemonDetailsUIViewController.swift */,
-				FA0E619829FEC10600EADCBA /* PokemonData.swift */,
-				FA0E619A29FEC10D00EADCBA /* PokemonModel.swift */,
 				FA0E618929FEA84500EADCBA /* Assets.xcassets */,
 				FA0E618B29FEA84500EADCBA /* LaunchScreen.storyboard */,
 				FA0E618E29FEA84500EADCBA /* Info.plist */,
 			);
 			path = PokemonApp;
+			sourceTree = "<group>";
+		};
+		FA0E61A029FFAC7C00EADCBA /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				FA0E618429FEA84400EADCBA /* ViewController.swift */,
+				FA0E619E29FF95EA00EADCBA /* PokemonDetailsUIViewController.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		FA0E61A129FFAC8F00EADCBA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				FA0E619A29FEC10D00EADCBA /* PokemonModel.swift */,
+				FA0E619829FEC10600EADCBA /* PokemonData.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		FA0E61A229FFACAA00EADCBA /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				FA0E619C29FEC48700EADCBA /* Constants.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
