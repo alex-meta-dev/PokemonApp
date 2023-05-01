@@ -12,10 +12,27 @@ class PokemonDetailsUIViewController: UIViewController {
     
     
     var pokemonImageURL: String?
+    var pokemonBaseXP: String?
+    var pokemonOrder: String?
+    var pokemonHeight: String?
+    var pokemonWeight: String?
+    
+    @IBOutlet weak var baseExperienceLabel: UILabel?
+    @IBOutlet weak var orderLabel: UILabel?
+    @IBOutlet weak var heightLabel: UILabel?
+    @IBOutlet weak var weightLabel: UILabel?
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         downloadImage(with: pokemonImageURL!)
+        DispatchQueue.main.async {
+            self.baseExperienceLabel?.text = self.pokemonBaseXP
+            self.orderLabel?.text = self.pokemonOrder
+            self.heightLabel?.text = self.pokemonHeight
+            self.weightLabel?.text = self.pokemonWeight
+        }
     
     }
     

@@ -5,6 +5,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -100,7 +101,52 @@
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qng-sv-zoh">
                                         <rect key="frame" x="0.0" y="423.66666666666674" width="393" height="418.33333333333326"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalCentering" alignment="center" spacing="116" translatesAutoresizingMaskIntoConstraints="NO" id="Kce-Q0-BiL">
+                                                <rect key="frame" x="34.333333333333343" y="130.66666666666669" width="324.66666666666663" height="156.66666666666669"/>
+                                                <subviews>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="0fy-ya-A03">
+                                                        <rect key="frame" x="0.0" y="0.0" width="324.66666666666669" height="20.333333333333332"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="⏳ Base Experience:" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="wbF-gG-qDd">
+                                                                <rect key="frame" x="0.0" y="0.0" width="158.33333333333334" height="20.333333333333332"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="🔥 Order:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dvD-wl-uxY">
+                                                                <rect key="frame" x="166.33333333333331" y="0.0" width="158.33333333333331" height="20.333333333333332"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="131" translatesAutoresizingMaskIntoConstraints="NO" id="aDR-EU-wqc">
+                                                        <rect key="frame" x="12.666666666666657" y="136.33333333333326" width="299.33333333333337" height="20.333333333333343"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="📏 Height:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ISR-5l-fvi">
+                                                                <rect key="frame" x="0.0" y="0.0" width="82.666666666666671" height="20.333333333333332"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="⚖️ Weight:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Ck-bk-2Aw">
+                                                                <rect key="frame" x="213.66666666666666" y="0.0" width="85.666666666666657" height="20.333333333333332"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                    </stackView>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstItem="Kce-Q0-BiL" firstAttribute="centerY" secondItem="Qng-sv-zoh" secondAttribute="centerY" id="DWd-H9-OZA"/>
+                                            <constraint firstItem="Kce-Q0-BiL" firstAttribute="centerX" secondItem="Qng-sv-zoh" secondAttribute="centerX" id="KP4-d3-YgN"/>
+                                        </constraints>
                                     </view>
                                 </subviews>
                             </stackView>
@@ -115,7 +161,11 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="baseExperienceLabel" destination="wbF-gG-qDd" id="wDJ-ks-xSL"/>
+                        <outlet property="heightLabel" destination="ISR-5l-fvi" id="7Kh-4T-P5L"/>
+                        <outlet property="orderLabel" destination="dvD-wl-uxY" id="pf8-fy-hMH"/>
                         <outlet property="pokemonImage" destination="UKd-aX-1EL" id="2TT-OW-d7K"/>
+                        <outlet property="weightLabel" destination="0Ck-bk-2Aw" id="kbZ-ak-17k"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vba-SO-Ntq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

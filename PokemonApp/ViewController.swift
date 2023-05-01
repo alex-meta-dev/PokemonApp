@@ -135,6 +135,13 @@ extension ViewController: UITableViewDataSource {
             
             // Each pokemon has a different ID, each image has the same URL but with a different ID at the end
             pokemonDetailedViewController.pokemonImageURL = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/\(pokemonDetailed.id).png"
+            
+            pokemonDetailedViewController.pokemonBaseXP = String(pokemonDetailed.base_experience)
+            pokemonDetailedViewController.pokemonOrder = String(pokemonDetailed.order)
+            pokemonDetailedViewController.pokemonHeight = String(pokemonDetailed.height)
+            pokemonDetailedViewController.pokemonWeight = String(pokemonDetailed.weight)
+            
+            
         }
     }
 }
