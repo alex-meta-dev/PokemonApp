@@ -28,10 +28,10 @@ class PokemonDetailsUIViewController: UIViewController {
         super.viewDidLoad()
         downloadImage(with: pokemonImageURL!)
         DispatchQueue.main.async {
-            self.baseExperienceLabel?.text = self.pokemonBaseXP
-            self.orderLabel?.text = self.pokemonOrder
-            self.heightLabel?.text = self.pokemonHeight
-            self.weightLabel?.text = self.pokemonWeight
+            self.baseExperienceLabel?.text = "⏳ Base Experience: \(self.pokemonBaseXP!)"
+            self.orderLabel?.text = "🔥 Order: \(self.pokemonOrder!)"
+            self.heightLabel?.text = "📏 Height: \(self.pokemonHeight!)"
+            self.weightLabel?.text = "⚖️ Weight: \(self.pokemonWeight!)"
         }
     
     }
